@@ -11,7 +11,7 @@ type skill = {
 
 const SkillAll = ({ skillall }: { skillall: skill[] }) => {
   const render = skillall.map((skill: skill) => {
-    return <Skill skill={skill} />;
+    return <Skill key={skill.skillID} skill={skill} />;
   });
   return <div className="w-100vh">{render}</div>;
 };

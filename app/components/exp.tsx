@@ -4,12 +4,14 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 type exp = {
   experience: string;
-  expID: Number;
+  expID: number;
 };
 
 const Exp = ({ exp }: { exp: exp }) => {
   const handleDel = async (): Promise<any> => {
-    const del = await axios.delete(`http://localhost:8080/exp/${exp.expID}`);
+    const del = await axios.delete(
+      `https://prototype-backend-plum.vercel.app/exp/${exp.expID}`
+    );
     location.reload();
   };
   return (

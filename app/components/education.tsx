@@ -5,6 +5,7 @@ import { useState } from "react";
 type educated = {
   year: string;
   university: string;
+  educationID: number;
 };
 
 const Education = ({ edu }: { edu: educated }) => {

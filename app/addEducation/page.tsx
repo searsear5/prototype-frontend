@@ -10,10 +10,13 @@ const AddEducation = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/addEducation", {
-        year,
-        university,
-      });
+      const res = await axios.post(
+        "https://prototype-backend-plum.vercel.app/addEducation",
+        {
+          year,
+          university,
+        }
+      );
       //(e.target as HTMLFormElement).reset();
       router.push("/");
     } catch (error) {

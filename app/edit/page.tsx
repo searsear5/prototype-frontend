@@ -47,28 +47,34 @@ const EditPage = () => {
       return;
     }
     try {
-      const res = await axios.put("http://localhost:8080/editUser", {
-        username,
-        firstname,
-        lastname,
-        nickname,
-        position,
-        nationality,
-        phone: telephone,
-        startdate: startingdate,
-        coverimage,
-        image,
-      });
-      const resinfo = await axios.put("http://localhost:8080/editinfo", {
-        address,
-        subdistrict,
-        district,
-        province,
-        postalcode,
-        facebook,
-        lineID,
-        instagram,
-      });
+      const res = await axios.put(
+        "https://prototype-backend-plum.vercel.app/editUser",
+        {
+          username,
+          firstname,
+          lastname,
+          nickname,
+          position,
+          nationality,
+          phone: telephone,
+          startdate: startingdate,
+          coverimage,
+          image,
+        }
+      );
+      const resinfo = await axios.put(
+        "https://prototype-backend-plum.vercel.app/editinfo",
+        {
+          address,
+          subdistrict,
+          district,
+          province,
+          postalcode,
+          facebook,
+          lineID,
+          instagram,
+        }
+      );
       if (res && resinfo) {
         setError("");
         (e.target as HTMLFormElement).reset();

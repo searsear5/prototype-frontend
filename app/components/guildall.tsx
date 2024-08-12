@@ -11,7 +11,7 @@ const GuildAll = ({ guildall }: { guildall: guilded[] }) => {
   const render = guildall.map((guild: guilded) => {
     return (
       <div className="px-2">
-        <Guild guild={guild} />
+        <Guild key={guild.guildID} guild={guild} />
       </div>
     );
   });

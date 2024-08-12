@@ -9,7 +9,7 @@ type interested = {
 const Interest = ({ interest }: { interest: interested }) => {
   const handleDel = async (): Promise<any> => {
     const del = await axios.delete(
-      `http://localhost:8080/interest/${interest.interestID}`
+      `https://prototype-backend-plum.vercel.app/interest/${interest.interestID}`
     );
     location.reload();
   };

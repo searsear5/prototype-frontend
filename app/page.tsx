@@ -14,10 +14,11 @@ export default function Home() {
   type educated = {
     year: string;
     university: string;
+    educationID: number;
   };
   type exp = {
     experience: string;
-    expID: Number;
+    expID: number;
   };
   type skill = {
     skillID: number;
@@ -84,7 +85,9 @@ export default function Home() {
   };
 
   const responseUser = async (): Promise<any> => {
-    const user = await axios.get(`http://localhost:8080/user`);
+    const user = await axios.get(
+      `https://prototype-backend-plum.vercel.app/user`
+    );
     //console.log(user.data.data[0]);
     const data = user.data.data[0];
     setUsername(data.username);
@@ -99,7 +102,9 @@ export default function Home() {
     setCoverimage(data.coverimage);
   };
   const responseInformation = async (): Promise<any> => {
-    const info = await axios.get("http://localhost:8080/information");
+    const info = await axios.get(
+      "https://prototype-backend-plum.vercel.app/information"
+    );
     //console.log(info.data.data[0]);
     const data = info.data.data[0];
     setAddress(data.address);
@@ -113,34 +118,44 @@ export default function Home() {
   };
 
   const responseEdu = async (): Promise<any> => {
-    const edu = await axios.get("http://localhost:8080/education");
+    const edu = await axios.get(
+      "https://prototype-backend-plum.vercel.app/education"
+    );
     console.log(edu.data.data);
     const dataedu = edu.data.data;
     setEducation(dataedu);
   };
 
   const responseExp = async (): Promise<any> => {
-    const exp = await axios.get("http://localhost:8080/experience");
+    const exp = await axios.get(
+      "https://prototype-backend-plum.vercel.app/experience"
+    );
     const dataexp = exp.data.data;
     setExperience(dataexp);
     console.log(dataexp);
   };
 
   const responseSkill = async (): Promise<any> => {
-    const skill = await axios.get("http://localhost:8080/skill");
+    const skill = await axios.get(
+      "https://prototype-backend-plum.vercel.app/skill"
+    );
     const dataskill = skill.data.data;
     console.log(dataskill);
     setSkillall(dataskill);
   };
 
   const responseInterest = async (): Promise<any> => {
-    const interest = await axios.get("http://localhost:8080/interest");
+    const interest = await axios.get(
+      "https://prototype-backend-plum.vercel.app/interest"
+    );
     const dataInt = interest.data.data;
     setInterestall(dataInt);
   };
 
   const responseGuild = async (): Promise<any> => {
-    const guild = await axios.get("http://localhost:8080/guild");
+    const guild = await axios.get(
+      "https://prototype-backend-plum.vercel.app/guild"
+    );
     const dataguild = guild.data.data;
     setGuildall(dataguild);
   };

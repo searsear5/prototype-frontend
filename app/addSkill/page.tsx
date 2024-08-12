@@ -10,10 +10,13 @@ const AddSkill = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/addSkill", {
-        skill,
-        skilllevel,
-      });
+      const res = await axios.post(
+        "https://prototype-backend-plum.vercel.app/addSkill",
+        {
+          skill,
+          skilllevel,
+        }
+      );
       router.push("/");
     } catch (error) {
       console.log("Error during add skill", error);

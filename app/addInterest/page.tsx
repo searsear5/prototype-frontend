@@ -9,9 +9,12 @@ const AddInterest = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/addinterests", {
-        interest,
-      });
+      const res = await axios.post(
+        "https://prototype-backend-plum.vercel.app/addinterests",
+        {
+          interest,
+        }
+      );
       router.push("/");
     } catch (error) {
       console.log("Error during add skill", error);

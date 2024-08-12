@@ -12,7 +12,7 @@ const InterestAll = ({ interestall }: { interestall: interested[] }) => {
     return (
       <div className="px-2">
         {" "}
-        <Interest interest={interest} />
+        <Interest key={interest.interestID} interest={interest} />
       </div>
     );
   });

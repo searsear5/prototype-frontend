@@ -9,9 +9,12 @@ const AddExperience = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/addExperience", {
-        experience,
-      });
+      const res = await axios.post(
+        "https://prototype-backend-plum.vercel.app/addExperience",
+        {
+          experience,
+        }
+      );
       //(e.target as HTMLFormElement).reset();
       router.push("/");
     } catch (error) {

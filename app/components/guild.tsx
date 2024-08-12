@@ -9,7 +9,7 @@ type guilded = {
 const Guild = ({ guild }: { guild: guilded }) => {
   const handleDel = async (): Promise<any> => {
     const del = await axios.delete(
-      `http://localhost:8080/interest/${guild.guildID}`
+      `https://prototype-backend-plum.vercel.app/guild/${guild.guildID}`
     );
     location.reload();
   };

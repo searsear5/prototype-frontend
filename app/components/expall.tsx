@@ -6,11 +6,11 @@ import { useState } from "react";
 import Exp from "./exp";
 type exp = {
   experience: string;
-  expID: Number;
+  expID: number;
 };
 const ExperienceAll = ({ experience }: { experience: exp[] }) => {
   const render = experience.map((exp: exp) => {
-    return <Exp exp={exp} />;
+    return <Exp key={exp.expID} exp={exp} />;
   });
   return <div className="flex justify-center">{render}</div>;
 };

@@ -11,9 +11,12 @@ const AddGuild = () => {
   ): Promise<any> => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:8080/addguild", {
-        guild,
-      });
+      const res = await axios.post(
+        "https://prototype-backend-plum.vercel.app/addguild",
+        {
+          guild,
+        }
+      );
       router.push("/");
     } catch (error) {
       console.log("Error during editing", error);
